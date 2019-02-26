@@ -1,0 +1,14 @@
+---
+- name: Change Hostnames on Boxes
+  hosts: ansible-r1 
+  connection: local
+  vars:
+     ansible_user: simon
+     ansible_ssh_pass: cisco
+     ansible_network_os: ios
+     ansible_connection: network_cli
+
+  tasks:
+   - name: Change hostname to hostname in inventory
+     ios_config:
+      lines: hostname {{ inventory_hostname }}

@@ -1,0 +1,14 @@
+
+ansible-r1
+ansible-r2
+ansible-r3
+
+[vmrouters]
+ansible-r1
+ansible-r2
+ansible-r3
+
+[cisco]
+ansible-r1
+ansible-r2
+ansible-r3

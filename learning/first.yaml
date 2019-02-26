@@ -1,0 +1,11 @@
+---
+- name: My Very First Playbook
+  hosts: vmrouters
+  gather_facts: false
+  
+  tasks:
+   - name: show ios version
+     raw: show version
+
+     register: print_output
+   - debug: var=print_output.stdout_lines

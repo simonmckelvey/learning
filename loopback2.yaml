@@ -1,0 +1,18 @@
+---
+- name: Create Loopback On Boxes
+  hosts: vmrouters
+  gather_facts: false
+  vars:
+     ansible_user: simon
+     ansible_ssh_pass: cisco
+     ansible_network_os: ios
+     ansible_connection: network_cli
+
+  tasks:
+   - name: Create Loopback3001
+     ios_config:
+      lines:
+       - description ANSIBLE CREATED Loopback3001
+       - ip address 100.73.0.1 255.255.255.255
+      parents: interface Loopback3001
+

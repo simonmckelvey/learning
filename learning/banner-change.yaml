@@ -1,0 +1,23 @@
+---
+- name: change IOS banner
+  hosts: vmrouters
+  gather_facts: false
+  connection: local
+  
+  tasks:
+   - name: Configure login banner
+     ios_banner:
+      banner: login
+      text: |
+       I changed this login banner
+       with Ansible
+       
+   - name: Remove MOTD banner
+     ios_banner:
+      banner: motd
+      state: absent
+      
+   - name: Set MOTD banner from file
+     ios_banner:
+      banner: motd
+      text: "{{ lookup('file', './motd.txt') }}"

@@ -1,0 +1,23 @@
+---
+- name: Run commands on boxes
+  hosts: vmrouters
+  gather_facts: false
+  vars:
+     ansible_user: simon
+     ansible_ssh_pass: cisco
+     ansible_network_os: ios
+     ansible_connection: network_cli
+  
+  tasks:
+   - name: show version
+     ios_command:
+      commands: show version
+   - name: Create Loopback3000
+     ios_config:
+      lines: 
+       - description ANSIBLE CREATED Loopback3000
+       - ip address 100.72.0.1 255.255.255.255
+      parents: interface Loopback3000
+   - name: Change hostname to hostname in inventory
+     ios_config:
+      lines: hostname {{ inventory_hostname }}

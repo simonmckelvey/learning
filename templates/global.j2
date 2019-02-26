@@ -1,0 +1,22 @@
+version 16.6
+service password-encryption
+hostname {{ inventory_hostname }}
+
+interface loopback0
+description CORE LOOPBACK
+ip address {{ loopback0_ip }} 255.255.255.255
+ip ospf 1 area 0
+
+interface loopback1
+description OSPF NETWORK
+ip address {{ loopback1_ip }} 255.255.255.0
+ip ospf network point-to-point
+ip ospf 1 area 0
+
+interface gi1
+ip ospf 1 area 0
+
+router ospf 1
+router-id {{ loopback0_ip }}
+!
+end

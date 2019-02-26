@@ -1,0 +1,24 @@
+---
+ - name: IOS Command
+   hosts: Cisco
+   gather_facts: false
+
+   vars:
+    ansible_connection: network_cli
+    ansible_network_os: ios
+    ansible_user: simon
+    ansible_ssh_pass: cisco
+
+   tasks:
+    - name: Show Version and wait for IOS
+      ios_command:
+       commands: show version
+       wait_for: result[0] contains IOS
+   
+    - name: Configure Loopback
+      ios_config:
+       lines:
+        - description Ansible Loopback
+        - ip address 172.16.1.1 255.255.255.255
+       parents: interface Loopback10
+
