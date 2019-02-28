@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?><rpc-reply message-id="urn:uuid:f2330668-4bbc-4139-a74c-ade8644afaea">
+<data>
+<configuration commit-seconds="1551361177" commit-localtime="2019-02-28 13:39:37 UTC" commit-user="root">
+    <version>17.1R1.8</version>
+    <system>
+        <host-name>ansible-vmx1</host-name>
+        <root-authentication>
+            <encrypted-password>$6$fxtR3CFz$ITKh716xrmfB.0j2a0jon9o0BORZtKiWDUEh2fiI9kZa1pMcP.IulZlLFK5PWiiR.9CGKA/bxLP6LFIj.hDk21</encrypted-password>
+        </root-authentication>
+        <login>
+            <user>
+                <name>simon</name>
+                <full-name>Simon McKelvey</full-name>
+                <uid>2000</uid>
+                <class>super-user</class>
+                <authentication>
+                    <encrypted-password>$6$mzEyHDX0$NRKEyrl32u8hEiU4HndLjepQiKahz8BrOzXtOuflo/9GmJMtkSFoRcsSgvcxcxprCFLxDrpDKxg3XVY6zlX3T/</encrypted-password>
+                </authentication>
+            </user>
+        </login>
+        <services>
+            <ssh>
+            </ssh>
+            <netconf>
+                <ssh>
+                    <port>830</port>
+                </ssh>
+            </netconf>
+        </services>
+        <syslog>
+            <user>
+                <name>*</name>
+                <contents>
+                    <name>any</name>
+                    <emergency/>
+                </contents>
+            </user>
+            <file>
+                <name>messages</name>
+                <contents>
+                    <name>any</name>
+                    <notice/>
+                </contents>
+                <contents>
+                    <name>authorization</name>
+                    <info/>
+                </contents>
+            </file>
+            <file>
+                <name>interactive-commands</name>
+                <contents>
+                    <name>interactive-commands</name>
+                    <any/>
+                </contents>
+            </file>
+        </syslog>
+    </system>
+    <interfaces>
+        <interface>
+            <name>ge-0/0/0</name>
+            <description>INTERFACE 1</description>
+            <unit>
+                <name>0</name>
+                <family>
+                    <inet>
+                        <address>
+                            <name>1.1.1.1/31</name>
+                        </address>
+                    </inet>
+                </family>
+            </unit>
+        </interface>
+        <interface>
+            <name>ge-0/0/1</name>
+            <description>INTERFACE 2</description>
+            <unit>
+                <name>0</name>
+                <family>
+                    <inet>
+                        <address>
+                            <name>2.2.2.1/31</name>
+                        </address>
+                    </inet>
+                </family>
+            </unit>
+        </interface>
+        <interface>
+            <name>fxp0</name>
+            <unit>
+                <name>0</name>
+                <family>
+                    <inet>
+                        <address>
+                            <name>192.168.122.14/24</name>
+                        </address>
+                    </inet>
+                </family>
+            </unit>
+        </interface>
+    </interfaces>
+</configuration>
+</data>
+</rpc-reply>
